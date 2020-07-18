@@ -27,7 +27,7 @@ public class VisiteyrServiceImp implements VisiteurService{
 	}
 
 	@Override
-	public List<Visiteur> GetAllWebOwner() {
+	public List<Visiteur> GetAllVisiteurs() {
 		return (List<Visiteur>) visiteurRepository.findAll();
 	}
 

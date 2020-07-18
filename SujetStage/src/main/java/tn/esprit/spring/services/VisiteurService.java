@@ -10,7 +10,7 @@ public interface VisiteurService {
 	
 	public long AddVisiteur(Visiteur visiteur,String siteWeb);
 
-	public List<Visiteur> GetAllWebOwner();
+	public List<Visiteur> GetAllVisiteurs();
 
 	public Visiteur GetVisiteurId(Long visiteurId);
 	
