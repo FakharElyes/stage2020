@@ -14,5 +14,7 @@ public interface WebOwnerService {
 	public void UpdateWebOwner(Long WebOwnerId, String siteWeb);
 	
 	public void DeleteWebOwner(Long webOwnerId);
+	
+	public void Visited(Long webOwnerId);
 
 }

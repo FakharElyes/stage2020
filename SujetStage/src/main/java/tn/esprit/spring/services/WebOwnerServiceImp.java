@@ -46,4 +46,10 @@ public class WebOwnerServiceImp implements  WebOwnerService{
 		
 	}
 
+	@Override
+	public void Visited(Long webOwnerId) {
+		webOwnerRepository.UpdateVisited(webOwnerId);
+		
+	}
+
 }

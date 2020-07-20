@@ -26,6 +26,15 @@ public class Visiteur implements Serializable{
 	@Column(name = "SiteWebVisite")
 	private String SiteWebVisite;
 	
+	@Column(name = "Xrow")
+	private Long X_row;
+	
+	@Column(name = "Yrow")
+	private Long Y_row;
+	
+	@Column(name = "Deg")
+	private Long Deg;
+	
 	@Column(name = "DateVisite")
 	@Temporal(TemporalType.TIMESTAMP)
 	@CreationTimestamp
@@ -69,15 +78,39 @@ public class Visiteur implements Serializable{
 	public void setDateLeave(Date dateLeave) {
 		DateLeave = dateLeave;
 	}
-	
+
+	public Long getX_row() {
+		return X_row;
+	}
+
+	public void setX_row(Long x_row) {
+		X_row = x_row;
+	}
+
+	public Long getY_row() {
+		return Y_row;
+	}
+
+	public void setY_row(Long y_row) {
+		Y_row = y_row;
+	}
+
+	public Long getDeg() {
+		return Deg;
+	}
+
+	public void setDeg(Long deg) {
+		Deg = deg;
+	}
+
+		
 	
 //---------------------------------------------	
 
 	@Override
 	public String toString() {
-		return "Visiteur [IdVisiteur=" + IdVisiteur + ", SiteWebVisite=" + SiteWebVisite + ", DateVisite=" + DateVisite
-				+ ", DateLeave=" + DateLeave + "]";
+		return "Visiteur [IdVisiteur=" + IdVisiteur + ", SiteWebVisite=" + SiteWebVisite + ", X_row=" + X_row
+				+ ", Y_row=" + Y_row + ", Deg=" + Deg + ", DateVisite=" + DateVisite + ", DateLeave=" + DateLeave + "]";
 	}
-	
 	
 }

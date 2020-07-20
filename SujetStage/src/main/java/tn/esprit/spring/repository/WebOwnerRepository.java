@@ -15,5 +15,10 @@ public interface WebOwnerRepository extends CrudRepository<WebOwner, Long>{
     @Transactional
     @Query("UPDATE WebOwner e SET e.SiteWeb=:SiteWeb1 where e.IdWebOwner=:WebOwnerId")
     public void UpdateSiteWeb(@Param("SiteWeb1")String SiteWeb1, @Param("WebOwnerId")Long WebOwnerId);
+	
+	@Modifying
+    @Transactional
+    @Query("UPDATE WebOwner e SET e.visited=visited+1 where e.IdWebOwner=:WebOwnerId")
+    public void UpdateVisited(@Param("WebOwnerId")Long WebOwnerId);
 
 }
