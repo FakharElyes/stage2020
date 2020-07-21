@@ -14,7 +14,9 @@ public interface VisiteurService {
 
 	public Visiteur GetVisiteurId(Long visiteurId);
 	
-	public void UpdateVisiteur(Long visiteurId, Date dateleave);
+	public void UpdateVisiteur(Long visiteurId);
+	
+	public void UpdateRow(Long Xrow, Long Yrow, Long visiteurId);
 
 
 }

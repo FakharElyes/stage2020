@@ -39,11 +39,17 @@ public class VisiteurController {
 	}
 
 	
-	@PutMapping(value = "/Edit-visiteurs/{VisiteurId}/{DateLeave1}")
+	@PutMapping(value = "/Edit-visiteurs/{VisiteurId}")
 	@ResponseBody
-	public void EditVisiteur(@PathVariable("VisiteurId")Long VisiteurId,@PathVariable("DateLeave1") Date DateLeave1) {
-		visiteurService.UpdateVisiteur((long) VisiteurId, DateLeave1);	
+	public void EditVisiteur(@PathVariable("VisiteurId")Long VisiteurId) {
+		visiteurService.UpdateVisiteur((long) VisiteurId);	
 	}
+	
 
+	@PutMapping(value = "/Cursor-visiteurs/{VisiteurId}/{Xrow}/{Yrow}")
+	@ResponseBody
+	public void CursorVisiteur(@PathVariable("VisiteurId")Long VisiteurId,@PathVariable("Xrow") Long Xrow,@PathVariable("Yrow") Long Yrow) {
+		visiteurService.UpdateRow((long) VisiteurId, Xrow, Yrow);	
+	}
 
 }

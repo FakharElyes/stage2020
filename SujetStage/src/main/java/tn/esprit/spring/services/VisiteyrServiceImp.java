@@ -1,5 +1,7 @@
 package tn.esprit.spring.services;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.List;
 
@@ -11,9 +13,11 @@ import tn.esprit.spring.entities.Visiteur;
 import tn.esprit.spring.entities.WebOwner;
 import tn.esprit.spring.repository.VisiteurRepository;
 
+public class VisiteyrServiceImp implements VisiteurService {
 
-public class VisiteyrServiceImp implements VisiteurService{
-	
+	DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+	LocalDateTime now = LocalDateTime.now();
+
 	@Autowired
 	VisiteurRepository visiteurRepository;
 
@@ -21,6 +25,8 @@ public class VisiteyrServiceImp implements VisiteurService{
 
 	@Override
 	public long AddVisiteur(Visiteur visiteur, String siteWeb) {
+		visiteur.setX_row(null);
+		visiteur.setY_row(null);
 		visiteur.setSiteWebVisite(siteWeb);
 		visiteurRepository.save(visiteur);
 		return visiteur.getIdVisiteur();
@@ -39,8 +45,15 @@ public class VisiteyrServiceImp implements VisiteurService{
 	}
 
 	@Override
-	public void UpdateVisiteur(Long visiteurId, Date dateleave) {
-		visiteurRepository.UpdateVisiteur(dateleave, visiteurId);	
+	public void UpdateVisiteur(Long visiteurId) {
+		visiteurRepository.UpdateVisiteur(now,visiteurId);
+	}
+
+	@Override
+	public void UpdateRow(Long Xrow, Long Yrow, Long visiteurId) {
+		visiteurRepository.UpdateXRow(Xrow, visiteurId);
+		visiteurRepository.UpdateYRow(Yrow, visiteurId);
+		
 	}
 
 }
